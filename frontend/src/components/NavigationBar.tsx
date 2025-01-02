@@ -1,6 +1,7 @@
 import { AppBar, Toolbar, Button, Typography } from '@mui/material';
 import CoPresentIcon from '@mui/icons-material/CoPresent';
 
+
 export const NavigationBar = () => {
   return (
     <AppBar position="static" className="nav-bar" sx={{ backgroundColor: '#19350C' }}>
@@ -15,13 +16,13 @@ export const NavigationBar = () => {
         
         {/* Navigation Links */}
         <div className="nav-links">
-          <Button href="" className="nav-item" sx={{ color: '#687d31' }}>
+          <Button href="/" className="nav-item" sx={{ color: '#687d31' }}>
             Home
           </Button>
-          <Button href="" className="nav-item" sx={{ color: '#687d31' }}>
+          <Button href="/about" className="nav-item" sx={{ color: '#687d31' }}>
             About
           </Button>
-          <Button href="" className="nav-item" sx={{ color: '#687d31' }}>
+          <Button href="/best-practices" className="nav-item" sx={{ color: '#687d31' }}>
             Best Practices
           </Button>
           <Button href="" className="nav-item" sx={{ color: '#687d31' }}>
