@@ -1,0 +1,73 @@
+# Node modules and Vite build output
+node_modules/
+dist/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary files
+*.temp
+*.cache
+.vscode/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# MacOS-specific files
+.DS_Store
+
+# Editor directories and files
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Python virtual environments
+venv/
+env/
+
+# Python cache files
+*.pyc
+*.pyo
+__pycache__/
+*.pytest_cache/
+.pytest_cache/
+
+# Flask-specific files
+instance/
+*.sqlite3
+*.db
+
+# Flask environment settings
+*.env
+.env.*
+config.py
+instance/config.py
+
+# Logs
+*.log
+
+# Coverage reports
+htmlcov/
+.coverage
+.tox/
+.cache/
+nosetests.xml
+coverage.xml
+*.cover
+
+# Python bytecode
+*.py[cod]
+*$py.class
+
+# IDE and OS generated files
+Thumbs.db
+.DS_Store
+
+# Miscellaneous
+!.gitkeep
