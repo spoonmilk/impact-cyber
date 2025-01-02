@@ -17,7 +17,18 @@ const SearchBar: React.FC<{ onSearch: (query: string) => void }> = ({ onSearch }
   };
 
   return (
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh',
+      }}
+    >
     <TextField
+      style={{
+        width: '75%'
+      }}
       variant="outlined"
       placeholder="Search..."
       value={searchQuery}
@@ -31,6 +42,7 @@ const SearchBar: React.FC<{ onSearch: (query: string) => void }> = ({ onSearch }
         ),
       }}
     />
+    </div>
   );
 };
 
