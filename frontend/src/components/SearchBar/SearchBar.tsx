@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import SearchIcon from '@mui/icons-material/Search';
+import styles from './SearchBar.module.css'
 
 const SearchBar: React.FC<{ onSearch: (query: string) => void }> = ({ onSearch }) => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -17,10 +18,10 @@ const SearchBar: React.FC<{ onSearch: (query: string) => void }> = ({ onSearch }
   };
 
   return (
-    <div className="search-input-container"
+    <div className={styles.searchcontainer}
     >
       <TextField
-        className="animated-search-bar"
+        className={styles.searchbar}
         variant="outlined"
         placeholder="Search..."
         value={searchQuery}
