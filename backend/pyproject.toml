@@ -2,14 +2,17 @@
 name = "server"
 version = "0.1.0"
 description = "Backend server for our project"
-authors = ["Your Name <you@example.com>"]
+authors = ["Your Actual Name <your.email@example.com>"]
+license = "MIT"
+package-mode = "false"
 
 [tool.poetry.dependencies]
 python = "^3.10"
 Flask = "^3.1.0"
-
-[tool.poetry.dev-dependencies]
-pytest = "^8.3.4"
+beautifulsoup4 = "^4.12.2"
+lxml = "^4.9.3"
+pandas = "^2.2.3"
+duckdb = "^1.1.3"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.10.0"
