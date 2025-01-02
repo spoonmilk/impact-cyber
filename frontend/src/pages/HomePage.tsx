@@ -10,14 +10,12 @@ const handleSearch = (query: string) => {
 
 export const HomePage = () => {
   return (
-    <div className="home-page-container">
-      <NavigationBar />
-      <div className="home-page-content">
+    <div className="page-container">
+      <div className="page-content">
         <h1>Welcome to Soteria!</h1>
         <p>This is the home page of Soteria </p>
         <SearchBar onSearch={handleSearch} />
       </div>
-      <Footer />
     </div>
   )
 }
