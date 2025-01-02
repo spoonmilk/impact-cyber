@@ -34,6 +34,22 @@ const SearchBar: React.FC<{ onSearch: (query: string) => void }> = ({ onSearch }
             </InputAdornment>
           ),
         }}
+        sx={{
+          '& .MuiOutlinedInput-root': {
+            transition: 'all 0.3s ease',
+            '&:hover': {
+              boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
+              borderColor: '#a9c59a',
+              transform: 'scale(1.02)',
+            },
+          },
+          '& .MuiOutlinedInput-notchedOutline': {
+            transition: 'border-color 0.3s ease',
+            '&:hover': {
+              borderColor: '#a9c59a',
+            },
+          },
+        }}
       />
     </div>
   );
