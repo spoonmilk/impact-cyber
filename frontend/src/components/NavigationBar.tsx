@@ -1,27 +1,31 @@
 import React from 'react';
 import { AppBar, Toolbar, Button, Typography } from '@mui/material';
+import CoPresentIcon from '@mui/icons-material/CoPresent';
 
 export const NavigationBar = () => {
   return (
-    <AppBar position="static" className="nav-bar">
+    <AppBar position="static" className="nav-bar" sx={{ backgroundColor: '#19350C' }}>
       <Toolbar className="tool-bar">
         {/* Logo Section */}
-        <Typography component="a" href="/" className="logo-title">
-          Soteria
-        </Typography>
-
+        <div className="logo">
+            <CoPresentIcon sx={{ color: '#D5D3CC' }} />
+            <Typography component="a" href="/" className="logo-title" sx={{ fontSize: '1.7rem' }}>
+            Soteria
+            </Typography>
+        </div>
+        
         {/* Navigation Links */}
         <div className="nav-links">
-          <Button href="#pricing" className="nav-item">
+          <Button href="" className="nav-item" sx={{ color: '#687d31' }}>
             Home
           </Button>
-          <Button href="#about" className="nav-item">
+          <Button href="" className="nav-item" sx={{ color: '#687d31' }}>
             About
           </Button>
-          <Button href="#resource" className="nav-item">
+          <Button href="" className="nav-item" sx={{ color: '#687d31' }}>
             Best Practices
           </Button>
-          <Button href="#contact" className="nav-item">
+          <Button href="" className="nav-item" sx={{ color: '#687d31' }}>
             Contact
           </Button>
         </div>
