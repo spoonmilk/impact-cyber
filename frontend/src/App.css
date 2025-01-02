@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -124,3 +124,27 @@ body {
   padding: 20px;
 }
 
+.search-input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.animated-search-bar .MuiOutlinedInput-root {
+  transition: all 0.3s ease;
+}
+
+.animated-search-bar .MuiOutlinedInput-root:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border-color: #a9c59a;
+  transform: scale(1.02);
+}
+
+.animated-search-bar .MuiOutlinedInput-notchedOutline {
+  transition: border-color 0.3s ease;
+}
+
+.animated-search-bar .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #a9c59a;
+}

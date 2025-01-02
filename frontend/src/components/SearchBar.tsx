@@ -17,31 +17,23 @@ const SearchBar: React.FC<{ onSearch: (query: string) => void }> = ({ onSearch }
   };
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh',
-      }}
+    <div className="search-input-container"
     >
-    <TextField
-      style={{
-        width: '75%'
-      }}
-      variant="outlined"
-      placeholder="Search..."
-      value={searchQuery}
-      onChange={handleInputChange}
-      onKeyDown={handleKeyPress}
-      InputProps={{
-        startAdornment: (
-          <InputAdornment position="start">
-            <SearchIcon />
-          </InputAdornment>
-        ),
-      }}
-    />
+      <TextField
+        className="animated-search-bar"
+        variant="outlined"
+        placeholder="Search..."
+        value={searchQuery}
+        onChange={handleInputChange}
+        onKeyDown={handleKeyPress}
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <SearchIcon />
+            </InputAdornment>
+          ),
+        }}
+      />
     </div>
   );
 };
