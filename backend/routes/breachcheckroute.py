@@ -5,6 +5,7 @@ from services.breachcheck import breach_info
 
 breachcheck_bp = Blueprint('breachcheck', __name__)
 
+
 @breachcheck_bp.route('/', methods=['GET'])
 def get_breach_info():
     company_name = request.args.get('company_name')
