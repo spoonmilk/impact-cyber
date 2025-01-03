@@ -1,13 +1,6 @@
 import SearchBar from "../components/SearchBar/SearchBar"
 import { useState } from "react"
 
-// Placeholder for actual code
-const handleSearch = (query: string) => {
-  console.log('Search query:', query);
-};
-
-
-
 export const HomePage: React.FC = () => {
   const [data, setData] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
@@ -36,9 +29,6 @@ export const HomePage: React.FC = () => {
       setData(null);
     }
   }
-
-
-
   return (
     <div className="page-container">
       <div className="page-content">
@@ -51,8 +41,6 @@ export const HomePage: React.FC = () => {
             as well as the risks associated with providing such data </p>
         </div>
         
-        <SearchBar onSearch={handleSearch} />
-
         <SearchBar
           onSearch={(query: string) => {
             fetchPrivacySpyData(query); // Trigger fetch on search
