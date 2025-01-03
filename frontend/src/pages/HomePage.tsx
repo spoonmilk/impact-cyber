@@ -14,7 +14,7 @@ export const HomePage: React.FC = () => {
   const [iconUrl, setIconUrl] = useState<string>('');
   const fetchPrivacySpyData = async (companyName: String) => {
     try {
-      const response = await fetch(`http://127.0.0.1:5000/privacyspy?company_name=${companyName}`);
+      const response = await fetch(`http://127.0.0.1:5000/api/privacyspy?company_name=${companyName}`);
       if (!response.ok){
         throw new Error('Failed to fetch data');
       }

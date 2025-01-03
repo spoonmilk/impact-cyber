@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from backend.services.privacy_spy import fetch_privacy_spy_data
+from services.privacy_spy import fetch_privacy_spy_data
 
 privacyspy_bp = Blueprint("privacyspy", __name__)
 

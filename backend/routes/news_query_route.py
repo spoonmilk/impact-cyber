@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from backend.services.news_scrape import scrape_news
+from services.news_scrape import scrape_news
 
 newsquery_bp = Blueprint("newsquery", __name__)
 

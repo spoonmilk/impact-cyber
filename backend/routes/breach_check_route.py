@@ -1,7 +1,7 @@
 # TODO: Add in parsing CSV to find breach information
 
 from flask import Blueprint, request, jsonify
-from backend.services.breach_check import breach_info
+from services.breach_check import breach_info
 
 breachcheck_bp = Blueprint('breachcheck', __name__)
 
