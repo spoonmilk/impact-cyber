@@ -13,9 +13,14 @@ class DuckDBHelper:
             csv_path (str): A path to the databreach dataset
             table_name (str): The name of the table to initialize (for duckdb) 
         """
+    
         query = f"""
-        CREATE TABLE {table_name} AS
-        SELECT * FROM read_csv_auto('{csv_path}')
+        CREATE OR REPLACE TABLE {table_name} AS
+        SELECT 
+            "Organization Name" AS company_name,
+            "Date(s) of Breach  (if known)" AS breach_dates,
+            "Reported Date" AS reported_date
+        FROM read_csv_auto('{csv_path}')
         """
         self.conn.execute(query)
 

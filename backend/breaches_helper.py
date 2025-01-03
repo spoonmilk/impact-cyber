@@ -19,8 +19,8 @@ class BreachesHelper:
         """
         
         query = f"""
-        SELECT * 
-        FROM {self.table_name} 
+        SELECT company_name, breach_dates, reported_date
+        FROM {self.table_name}
         WHERE LOWER(company_name) = LOWER(?)
         """
-        return self.db_helper.conn.execute(query, [company_name]).fetchdf().to_dict(orient='records')
+        return self.db_helper.execute_query(query, [company_name])
