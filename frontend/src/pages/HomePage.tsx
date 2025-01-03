@@ -42,8 +42,15 @@ export const HomePage: React.FC = () => {
   return (
     <div className="page-container">
       <div className="page-content">
-        <h1>Welcome to Soteria!</h1>
-        <p>This is the home page of Soteria </p>
+        <div className="info-section">
+          <h1 style={{ paddingBottom: '10px', fontSize: '4rem'}}>Soteria</h1>
+          <h4 style={{ paddingBottom: '30px', color: '#6fa9bb'}}>Protect your data from harm</h4>
+          <p style={{ paddingBottom: '10px'}}>Thinking about signing up for a service or tool that will take 
+            information from you? Search their name in the search bar below 
+            and receive a comprehensive report of how your data will be used 
+            as well as the risks associated with providing such data </p>
+        </div>
+        
         <SearchBar onSearch={handleSearch} />
 
         <SearchBar

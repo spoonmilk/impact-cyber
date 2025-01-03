@@ -9,9 +9,9 @@ export const NavigationBar = () => {
         {/* Logo Section */}
         <div className="logo">
             <CoPresentIcon sx={{ color: '#D5D3CC' }} />
-            <Typography component="a" href="/" className="logo-title" sx={{ fontSize: '1.7rem', fontFamily: 'Ubuntu' }}>
+            {/* <Typography component="a" href="/" className="logo-title" sx={{ fontSize: '1.7rem', fontFamily: 'Ubuntu' }}>
             Soteria
-            </Typography>
+            </Typography> */}
         </div>
         
         {/* Navigation Links */}
