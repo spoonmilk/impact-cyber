@@ -29,6 +29,24 @@ export const HomePage: React.FC = () => {
       setData(null);
     }
   }
+
+  const fetchBreachData = async (companyName: String) => {
+    try {
+    const response = await fetch(`http://127.0.0.1:5000/api/breachcheck?company_name=${companyName}`);
+      if (!response.ok){
+        throw new Error('Failed to fetch data');
+      }
+      const data = await response.json();
+      setData(data);
+      console.log(data);
+      setError(null);  
+      
+    } catch (error: any) {
+      setError(error.message);
+      setData(null);
+    }
+  }
+
   return (
     <div className="page-container">
       <div className="page-content">
@@ -44,6 +62,7 @@ export const HomePage: React.FC = () => {
         <SearchBar
           onSearch={(query: string) => {
             fetchPrivacySpyData(query); // Trigger fetch on search
+            fetchBreachData(query);
           }}
         />
 

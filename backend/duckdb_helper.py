@@ -1,44 +1,22 @@
 import duckdb
+import os
 import pandas as pd
 
 class DuckDBHelper:
     def __init__(self, db_file=':memory:'):
         """Initialize the DuckDB connection."""
+        # Ensure the directory for the DuckDB file exists
+        if db_file != ':memory:':
+            os.makedirs(os.path.dirname(db_file), exist_ok=True)
         self.conn = duckdb.connect(db_file)
 
     def preprocess_and_load_csv(self, csv_path, table_name):
         """
         Preprocess the CSV using pandas and load it into a DuckDB table.
-        
-        Args:
-            csv_path: Path to the CSV file.
-            table_name: Name of the DuckDB table to create.
         """
-        # Load the dataset with pandas
+        # Load the dataset
         df = pd.read_csv(csv_path)
 
-        # Preprocess the dataset
-        df = self._preprocess_dataset(df)
-
-        # Save the cleaned dataframe to a temporary CSV
-        cleaned_csv_path = "../data/temp/cleaned_breaches.csv"
-        df.to_csv(cleaned_csv_path, index=False)
-
-        # Load the cleaned CSV into DuckDB
-        query = f"""
-        CREATE OR REPLACE TABLE {table_name} AS
-        SELECT * FROM read_csv_auto('{cleaned_csv_path}')
-        """
-        self.conn.execute(query)
-        
-    def _preprocess_dataset(self, df):
-        """
-        Preprocess the dataset to clean and normalize data.
-        
-        Args:
-            The pandas DataFrame to preprocess.
-            A cleaned pandas DataFrame.
-        """
         # Rename columns for simplicity
         df.rename(columns={
             "Organization Name": "company_name",
@@ -47,19 +25,14 @@ class DuckDBHelper:
         }, inplace=True)
 
         # Fill missing values
-        df['breach_dates'].fillna("Unknown", inplace=True)
-        df['reported_date'].fillna("Unknown", inplace=True)
+        df['breach_dates'] = df['breach_dates'].fillna("Unknown")
+        df['reported_date'] = df['reported_date'].fillna("Unknown")
 
-        # Standardize organization names
+        # Standardize company names
         df['company_name'] = df['company_name'].str.strip().str.lower()
 
-        df['breach_dates'] = pd.to_datetime(df['breach_dates'], errors='coerce')
-        df['reported_date'] = pd.to_datetime(df['reported_date'], errors='coerce')
-
-        # Remove duplicates
-        df.drop_duplicates(subset=['company_name', 'breach_dates', 'reported_date'], inplace=True)
-
-        return df
+        # Save the preprocessed data to DuckDB
+        self.conn.execute(f"CREATE OR REPLACE TABLE {table_name} AS SELECT * FROM df")
     
     def execute_query(self, query, params=None):
         """Execute a SQL query and return results as a list of dictionaries."""

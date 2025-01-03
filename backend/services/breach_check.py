@@ -17,8 +17,8 @@ class BreachesService:
         """
         Static method to initialize the service with preprocessed data.
         """
-        db_helper = DuckDBHelper(db_file='backend/data/temp/breaches.duckdb')
-        db_helper.preprocess_and_load_csv('backend/data/data-breaches.csv', 'breaches_table')
+        db_helper = DuckDBHelper(db_file=':memory:')
+        db_helper.preprocess_and_load_csv('./data/data-breaches.csv', 'breaches_table')
         return BreachesService(db_helper)
     
     def get_breaches(self, company_name: str): 

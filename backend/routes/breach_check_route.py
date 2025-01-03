@@ -1,15 +1,14 @@
 # TODO: Add in parsing CSV to find breach information
 from flask import Blueprint, request, jsonify
-from backend.services.breach_check import BreachesService
-
+from services.breach_check import BreachesService
 
 # Initialize Blueprint
-breach_check_bp = Blueprint('breach_check', __name__)
+breachcheck_bp = Blueprint('breach_check', __name__)
 
 # Initialize the BreachesService
 breaches_service = BreachesService.initialize_service()
 
-@breach_check_bp.route('/breaches', methods=['GET'])
+@breachcheck_bp.route('/', methods=['GET'])
 def get_breaches():
     company_name = request.args.get('company_name')
     if not company_name:
