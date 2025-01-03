@@ -18,10 +18,10 @@ export const Footer = () => {
 
       {/* Legal Links Section */}
       <Box className="footer-legal">
-        <Typography component="a" href="/privacy-policy" className="footer-link" sx={{ color: '#687d31' }}>
+        <Typography component="a" href="/privacy-policy" className="footer-link" sx={{ color: '#687d31', fontFamily: 'Ubuntu' }}>
           Privacy Policy
         </Typography>
-        <Typography component="a" href="/terms-of-service" className="footer-link" sx={{ color: '#687d31' }}>
+        <Typography component="a" href="/terms-of-service" className="footer-link" sx={{ color: '#687d31', fontFamily: 'Ubuntu' }}>
           Terms of Service
         </Typography>
       </Box>
