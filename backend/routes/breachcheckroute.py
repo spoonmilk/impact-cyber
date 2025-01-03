@@ -3,10 +3,10 @@
 from flask import Blueprint, request, jsonify
 from services.breachcheck import breach_info
 
-privacyspy_route = Blueprint('breachcheck_route', __name__)
+breachcheck_bp = Blueprint('breachcheck', __name__)
 
-@privacyspy_route.route('/privacyspy', methods=['GET'])
-def get_privacy_spy_data():
+@breachcheck_bp.route('/', methods=['GET'])
+def get_breach_info():
     company_name = request.args.get('company_name')
     if not company_name:
         return jsonify({"error": "Company name not provided"}), 400
