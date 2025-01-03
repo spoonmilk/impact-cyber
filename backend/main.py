@@ -1,8 +1,8 @@
 from flask import Flask
 from flask_cors import CORS
-from backend.routes.breach_check_route import breachcheck_bp
-from backend.routes.news_query_route import newsquery_bp
-from backend.routes.privacy_spy_route import privacyspy_bp
+from routes.breach_check_route import breachcheck_bp
+from routes.news_query_route import newsquery_bp
+from routes.privacy_spy_route import privacyspy_bp
 
 def create_app():
     app = Flask(__name__)
