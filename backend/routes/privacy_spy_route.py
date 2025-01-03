@@ -1,9 +1,9 @@
 from flask import Blueprint, request, jsonify
-from services.privacyspy import fetch_privacy_spy_data
+from backend.services.privacy_spy import fetch_privacy_spy_data
 
 privacyspy_bp = Blueprint('privacyspy', __name__)
 
-@privacyspy_route.route('/', methods=['GET'])
+@privacyspy_bp.route('/', methods=['GET'])
 def get_privacy_spy_data():
     company_name = request.args.get('company_name')
     if not company_name:
