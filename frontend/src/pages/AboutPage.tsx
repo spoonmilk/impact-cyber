@@ -44,8 +44,8 @@ export const AboutPage = () => {
           </div>
         </div>
       </div>
-    );
-  };
-  
-  export default AboutPage;
-  
+  );
+};
+
+export default AboutPage;
+
