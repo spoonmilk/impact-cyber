@@ -27,3 +27,27 @@
     box-sizing: border-box;
 }
 
+.floating-buttons {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .floating-button {
+    padding: 10px 20px;
+    background-color: #19350c;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .floating-button:hover {
+    background-color: #0056b3;
+  }
+
