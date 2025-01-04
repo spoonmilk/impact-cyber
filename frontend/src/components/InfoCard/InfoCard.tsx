@@ -72,6 +72,9 @@ export default function InfoCard({ data, iconUrl, childCompany }: InfoCardProps)
         <Typography variant="body2" sx={{ color: 'text.secondary', marginBottom: 2 }}>
           {data?.description || 'No description available.'}
         </Typography>
+        <Typography variant="body2" sx={{ color: '#6fa9bb', marginBottom: 2 }}>
+            Last Updated: {data?.lastUpdated || 'NA'}
+        </Typography>
       </CardContent>
       <CardActions disableSpacing>
         <span style={{ marginLeft: '190px' }}>Show more for details about terms and services</span>

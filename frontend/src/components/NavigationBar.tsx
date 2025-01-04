@@ -28,9 +28,6 @@ export const NavigationBar = () => {
           <Button href="/best-practices" className="nav-item" sx={{ color: '#687d31', fontFamily: 'Ubuntu' }}>
             Best Practices
           </Button>
-          <Button href="" className="nav-item" sx={{ color: '#687d31', fontFamily: 'Ubuntu' }}>
-            Contact
-          </Button>
         </div>
       </Toolbar>
     </AppBar>
