@@ -13,30 +13,55 @@ export const ToolPage: React.FC = () => {
   const [data, setData] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
   const [iconUrl, setIconUrl] = useState<string>('');
-  const fetchPrivacySpyData = async (companyName: String) => {
+  const [childCompany, setChildCompany] = useState<boolean>(false);
+ 
+  const fetchPrivacySpyData = async (companyName: string) => {
     try {
+      setChildCompany(false);
       const response = await fetch(`http://127.0.0.1:5000/api/privacyspy?company_name=${companyName}`);
-      if (!response.ok){
+      if (!response.ok) {
         throw new Error('Failed to fetch data');
       }
       const data = await response.json();
       setData(data);
-      console.log(data);
+      console.log('Privacy Spy Data:', data);
+      if (data.parent) {
+        setChildCompany(true);
+      }
       setError(null);
-
-      //getting icon from Google
-      if(data?.hostnames?.[0]){
+  
+      // Getting icon from Google
+      if (data?.hostnames?.[0]) {
         setIconUrl("https://logo.clearbit.com/" + data.hostnames[0]);
-      } 
-      else{
+      } else {
         setIconUrl('');
       }
-      
+  
+      // Check if rubric is missing and parent exists
+      if ((!data.rubric || data.rubric.length === 0) && data.parent) {
+        console.log('Rubric missing. Fetching parent company data...');
+        const parentResponse = await fetch(
+          `http://127.0.0.1:5000/api/privacyspy?company_name=${data.parent}`
+        );
+        if (!parentResponse.ok) {
+          throw new Error('Failed to fetch parent company data');
+        }
+        const parentData = await parentResponse.json();
+  
+        // Merge rubric info from parent with child data
+        setData({
+          ...data,
+          rubric: parentData.rubric || [],
+        });
+  
+        console.log('Parent Company Data:', parentData);
+      }
     } catch (error: any) {
       setError(error.message);
       setData(null);
     }
-  }
+  };
+
 
   const fetchBreachData = async (companyName: String) => {
     try {
@@ -94,7 +119,7 @@ export const ToolPage: React.FC = () => {
             <p>{data.description}</p>
           </div>
         )} */}
-        {data && (<InfoCard data={data} iconUrl={iconUrl} />) }
+        {data && (<InfoCard data={data} iconUrl={iconUrl} childCompany={childCompany} />) }
         
       </div>
     </div>

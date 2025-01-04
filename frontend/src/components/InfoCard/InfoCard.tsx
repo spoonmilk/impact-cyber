@@ -10,6 +10,7 @@ import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import QuizIcon from '@mui/icons-material/Quiz';
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
@@ -31,9 +32,10 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 interface InfoCardProps {
   data: any;
   iconUrl: string;
+  childCompany: boolean;
 }
 
-export default function InfoCard({ data, iconUrl }: InfoCardProps) {
+export default function InfoCard({ data, iconUrl, childCompany }: InfoCardProps) {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -41,7 +43,7 @@ export default function InfoCard({ data, iconUrl }: InfoCardProps) {
   };
 
   return (
-    <Card sx={{ maxWidth: 600 }}>
+    <Card sx={{width: 600 }}>
       <CardHeader
         avatar={
           iconUrl ? (
@@ -72,7 +74,7 @@ export default function InfoCard({ data, iconUrl }: InfoCardProps) {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <span>Show more for details about terms and services</span>
+        <span style={{ marginLeft: '190px' }}>Show more for details about terms and services</span>
         <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}
@@ -84,9 +86,17 @@ export default function InfoCard({ data, iconUrl }: InfoCardProps) {
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          <Typography variant="h6" sx={{ marginBottom: 2 }}>
-            Rubric Information
-          </Typography>
+        <div style={{ display: 'flex', alignItems: 'center',  marginBottom: '10px' }}>
+            <QuizIcon sx={{ color: '#6fa9bb', mr: 1 }} />
+            <Typography variant="h6" sx={{ marginBottom: 2, paddingTop: "15px", fontWeight: 'bold', textDecorationLine: 'underline' }}>
+                RUBRIC INFORMATION
+            </Typography>
+        </div>
+          {childCompany && (
+            <Typography variant="body2" sx={{ marginBottom: 2 }}>
+              * {data?.name} is a child company of {data?.parent} and share the same rubric.
+            </Typography>
+          )}
           {data?.rubric?.length > 0 ? (
             data.rubric.map((item: any, index: number) => (
               <div key={index} style={{ marginBottom: '10px' }}>
