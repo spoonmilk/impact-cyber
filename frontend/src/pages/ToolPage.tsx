@@ -56,7 +56,7 @@ export const ToolPage: React.FC = () => {
 
 
   return (
-    <div className="page-container">
+    <div className="page-container card-background">
       <div className="page-content">
         <div className="info-section">
           <h1 style={{ paddingBottom: '10px', fontSize: '4rem'}}>Soteria</h1>
@@ -94,8 +94,8 @@ export const ToolPage: React.FC = () => {
             <p>{data.description}</p>
           </div>
         )} */}
-
-        <InfoCard data={data} iconUrl={iconUrl} />
+        {data && (<InfoCard data={data} iconUrl={iconUrl} />) }
+        
       </div>
     </div>
   )
