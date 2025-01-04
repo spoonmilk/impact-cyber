@@ -4,11 +4,7 @@ import CardContent from '@mui/material/CardContent';
 import { Typography } from '@mui/material';
 
 interface BreachCardProps {
-  breaches: {
-    company_name: string;
-    breach_date: string;
-    reported_date: string;
-  }[];
+  breaches: { breach_dates: string; company_name: string; reported_date: string }[];
 }
 
 export default function BreachCard({ breaches }: BreachCardProps) {
@@ -25,24 +21,20 @@ export default function BreachCard({ breaches }: BreachCardProps) {
     );
   }
 
+  const allBreachDates = breaches.map((breach) => breach.breach_dates).join(', ');
+  const allReportedDates = breaches.map((breach) => breach.reported_date).join(', ');
+
   return (
-    <>
-      {breaches.map((breach, index) => (
-        <Card key={index} sx={{ maxWidth: 500, margin: 2 }}>
-          <CardHeader
-            title={breach.company_name || 'Company Name'}
-            subheader="Breach data from public datasets"
-          />
-          <CardContent>
-            <Typography variant="body2" sx={{ color: 'text.secondary', marginBottom: 2 }}>
-              Breach Date: {breach.breach_date || 'Unknown'}
-            </Typography>
-            <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-              Reported Date: {breach.reported_date || 'Unknown'}
-            </Typography>
-          </CardContent>
-        </Card>
-      ))}
-    </>
+    <Card sx={{ maxWidth: 500, margin: 2 }}>
+      <CardHeader title={breaches[0].company_name || 'Company Name'} subheader="Breach data from public datasets" />
+      <CardContent>
+        <Typography variant="body2" sx={{ color: 'text.secondary', marginBottom: 2 }}>
+          <strong>Breach Dates:</strong> {allBreachDates || 'Unknown'}
+        </Typography>
+        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+          <strong>Reported Dates:</strong> {allReportedDates || 'Unknown'}
+        </Typography>
+      </CardContent>
+    </Card>
   );
 }

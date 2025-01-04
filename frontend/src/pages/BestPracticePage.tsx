@@ -1,6 +1,6 @@
 export const BestPracticePage = () => {
   return (
-    <div className="page-container">
+    <div className="page-container card-background">
         <div className="page-content">
             <div>BestPactice</div>
         </div>

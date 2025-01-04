@@ -1,6 +1,6 @@
 export const AboutPage = () => {
     return (
-      <div className="page-container">
+      <div className="page-container card-background">
         <div className="page-content">
           <h1 className="about-title">About Us</h1>
           <div className="story">
@@ -21,7 +21,7 @@ export const AboutPage = () => {
             <h2>All Members</h2>
             <div className="team-members">
               <div className="member">
-                <img src="../src/assets/profilepic.jpg" alt="Member 1" />
+                <img src="../src/assets/Alex.png" alt="Member 1" />
                 <h3>Alex Khosrowshahi</h3>
                 <p>Software Developer</p>
               </div>

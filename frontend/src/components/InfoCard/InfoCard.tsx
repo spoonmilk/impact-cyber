@@ -27,6 +27,7 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 }),
 );
 
+
 interface InfoCardProps {
   data: any;
   iconUrl: string;
@@ -40,7 +41,7 @@ export default function InfoCard({ data, iconUrl }: InfoCardProps) {
   };
 
   return (
-    <Card sx={{ maxWidth: 500 }}>
+    <Card sx={{ maxWidth: 600 }}>
       <CardHeader
         avatar={
           iconUrl ? (
@@ -59,7 +60,7 @@ export default function InfoCard({ data, iconUrl }: InfoCardProps) {
         }
         action={
           <div className="score">
-            <Typography variant="h6">Score: {data?.score || 'N/A'}/10</Typography>
+            <Typography variant="h6">Score: {data?.score || 'NA'}/10</Typography>
           </div>
         }
         title={data?.name || 'Company Name'}
@@ -71,13 +72,13 @@ export default function InfoCard({ data, iconUrl }: InfoCardProps) {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <span style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>Show More</span>
+        <span>Show more for details about terms and services</span>
         <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}
           aria-expanded={expanded}
           aria-label="show more"
-        >
+        > 
           <ExpandMoreIcon />
         </ExpandMore>
       </CardActions>
@@ -89,15 +90,20 @@ export default function InfoCard({ data, iconUrl }: InfoCardProps) {
           {data?.rubric?.length > 0 ? (
             data.rubric.map((item: any, index: number) => (
               <div key={index} style={{ marginBottom: '10px' }}>
-                <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
-                  Question: {item.question?.value || 'N/A'}
+                <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+                  {item.question.text || 'NA'}
                 </Typography>
-                <Typography variant="body2">
-                  Option: {item.option?.text || 'N/A'}
+                <Typography variant="body1" sx={{ paddingBottom: '10px' }}>
+                  Answer: {item.option?.text || 'NA'}
                 </Typography>
                 <Typography variant="body2" sx={{ fontStyle: 'italic' }}>
                   Citations: {item.citations?.join(', ') || 'None'}
                 </Typography>
+                {item.question.notes.length > 0  && (
+                    <Typography variant="body2" sx={{ color: '#6fa9bb', marginTop: '15px' }}>
+                     Notes: {item.question.notes[0]}
+                    </Typography>
+                )}
               </div>
             ))
           ) : (

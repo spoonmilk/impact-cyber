@@ -12,7 +12,7 @@ const handleSearch = (query: string) => {
 
 export const ToolPage: React.FC = () => {
   const [data, setData] = useState<any>(null);
-  const [breachData, setBreachData] = useState<any>(null);
+  const [breachData, setBreachData] = useState<{ breaches: any[] } | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [iconUrl, setIconUrl] = useState<string>('');
   const fetchPrivacySpyData = async (companyName: string) => {
@@ -44,21 +44,24 @@ export const ToolPage: React.FC = () => {
     try {
       const response = await fetch(`http://127.0.0.1:5000/api/breachcheck?company_name=${companyName}`);
       if (!response.ok) {
-        throw new Error('Failed to fetch data');
+        throw new Error(`HTTP error! Status: ${response.status}`);
       }
+
       const data = await response.json();
+      console.log('Backend Response:', data);
 
-      setBreachData(Array.isArray(data) ? data : [data]);
+      // Ensure breachData is always in the expected format
+      setBreachData(data || { breaches: [] });
       setError(null);
-
-    } catch (error: any) {
+    } catch (error) {
+      console.error('Error fetching breach data:', error);
+      setBreachData({ breaches: [] }); // Default to empty breaches
       setError(error.message);
-      setBreachData([]);
     }
   };
 
   return (
-    <div className="page-container">
+    <div className="page-container card-background">
       <div className="page-content">
         <div className="info-section">
           <h1 style={{ paddingBottom: '10px', fontSize: '4rem' }}>Soteria</h1>
@@ -96,9 +99,8 @@ export const ToolPage: React.FC = () => {
             <p>{data.description}</p>
           </div>
         )} */}
-
-        <InfoCard data={data} iconUrl={iconUrl} />
-        <BreachCard breaches={breachData || []} />
+        {data && (<InfoCard data={data} iconUrl={iconUrl} />)}
+        <BreachCard breaches={breachData?.breaches || []} />
       </div>
     </div>
   )
