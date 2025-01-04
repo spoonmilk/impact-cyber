@@ -81,7 +81,7 @@ export const ToolPage: React.FC = () => {
     } catch (error) {
       console.error('Error fetching breach data:', error);
       setBreachData({ breaches: [] }); // Default to empty breaches
-      setError(error.message);
+
     }
   };
 

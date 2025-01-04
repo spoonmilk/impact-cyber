@@ -18,7 +18,7 @@ export const AboutPage = () => {
           </div>
   
           <div className="team">
-            <h2>All Members</h2>
+            <h2>Meet the Team!</h2>
             <div className="team-members">
               <div className="member">
                 <img src="../src/assets/Alex.png" alt="Member 1" />
