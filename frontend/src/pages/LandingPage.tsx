@@ -36,15 +36,18 @@ export const LandingPage = () => {
             '../src/assets/hacker.png',
           ]}
           dos={
-            `Use unique passwords for every account you have. Try not to reuse passwords across multiple sites. If one account is compromised, others will remain secure. 
-            Use Multi-factor authentication for all possible accounts
-            Passphrases should be greater than 8 characters
-            Use a Password Manager: Password managers like … can securely store and generate strong, unique passwords for each of your accounts, eliminating the need to remember them all.`
+            `Change passwords if you think your account has been breached.
+            Use unique passwords for every account you have. Try not to reuse or paraphrase the same password across multiple sites. If one account is compromised, others will remain secure. 
+            Use Multi-factor authentication for all possible accounts - Check out Ente, Bitwarden for setting up MFA
+            Create passwords with at least 12-15 characters
+            Use passphrases instead of single words
+            Using a Password Manager can help securely store and generate strong, unique passwords for each of your accounts - Check out Bitwarden, 1Password`
           }
           donts={
-            `Have separate passwords for different accounts
-            Use Multi-factor authentication for all possible accounts
-            Passphrases should be greater than 8 characters`
+            `Use the same password for every account
+            Don't use personal information or predictable information in your password.
+            Don't share passwords via email or text messages
+            Don't keep default passwords provided by services or devices`
           }
         />
       </div>
@@ -73,11 +76,6 @@ export const LandingPage = () => {
         </div>
       </div>
 
-
-
-      {/* <div className="page-content">
-        <Typography>Landing Page</Typography>
-      </div>  */}
     </div>
   );
 }
