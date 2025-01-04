@@ -1,4 +1,5 @@
 from duckdb_helper import DuckDBHelper
+import json
 
 class BreachesService:
     def __init__(self, db_helper, table_name = 'breaches_table'):
@@ -35,5 +36,8 @@ class BreachesService:
         WHERE LOWER(company_name) = LOWER(?)
         """
         
-        return self.db_helper.execute_query(query, [company_name])
+        breaches = self.db_helper.execute_query(query, [company_name])
+        print(f"Returning {company_name} breaches: {json.dumps(breaches)}")
+
+        return breaches
     

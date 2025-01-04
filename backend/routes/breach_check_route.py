@@ -15,7 +15,9 @@ def get_breaches():
         return jsonify({'error': 'company_name is required'}), 400
 
     try:
-        breaches = breaches_service.get_breaches_by_company(company_name)
+        breaches = breaches_service.get_breaches(company_name)
+        print(f"DEBUG: Retrieved breaches for {company_name}: {breaches}")
         return jsonify({'company_name': company_name, 'breaches': breaches})
     except Exception as e:
+        print(f"ERROR: Failed to retrieve breaches for {company_name}. Exception: {e}")
         return jsonify({'error': str(e)}), 500

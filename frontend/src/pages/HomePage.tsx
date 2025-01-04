@@ -13,7 +13,7 @@ export const HomePage: React.FC = () => {
       }
       const data = await response.json();
       setData(data);
-      console.log(data);
+      console.log('Privacy Spy Data:', data);
       setError(null);
 
       //getting icon from Google
@@ -37,13 +37,11 @@ export const HomePage: React.FC = () => {
         throw new Error('Failed to fetch data');
       }
       const data = await response.json();
-      setData(data);
-      console.log(data);
+      console.log('Breach Data:', data);
       setError(null);  
       
     } catch (error: any) {
       setError(error.message);
-      setData(null);
     }
   }
 
