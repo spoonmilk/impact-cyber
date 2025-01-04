@@ -3,20 +3,13 @@ import { useState } from "react"
 import InfoCard from "../components/InfoCard/InfoCard";
 import BreachCard from "../components/BreachCard/BreachCard";
 
-// Placeholder for actual code
-const handleSearch = (query: string) => {
-  console.log('Search query:', query);
-};
-
-
-
 export const ToolPage: React.FC = () => {
   const [data, setData] = useState<any>(null);
   const [breachData, setBreachData] = useState<{ breaches: any[] } | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [iconUrl, setIconUrl] = useState<string>('');
   const [childCompany, setChildCompany] = useState<boolean>(false);
- 
+
   const fetchPrivacySpyData = async (companyName: string) => {
     try {
       setChildCompany(false);
@@ -31,14 +24,14 @@ export const ToolPage: React.FC = () => {
         setChildCompany(true);
       }
       setError(null);
-  
+
       // Getting icon from Google
       if (data?.hostnames?.[0]) {
         setIconUrl("https://logo.clearbit.com/" + data.hostnames[0]);
       } else {
         setIconUrl('');
       }
-  
+
       // Check if rubric is missing and parent exists
       if ((!data.rubric || data.rubric.length === 0) && data.parent) {
         console.log('Rubric missing. Fetching parent company data...');
@@ -49,13 +42,13 @@ export const ToolPage: React.FC = () => {
           throw new Error('Failed to fetch parent company data');
         }
         const parentData = await parentResponse.json();
-  
+
         // Merge rubric info from parent with child data
         setData({
           ...data,
           rubric: parentData.rubric || [],
         });
-  
+
         console.log('Parent Company Data:', parentData);
       }
     } catch (error: any) {
