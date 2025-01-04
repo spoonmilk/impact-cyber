@@ -10,19 +10,18 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 function App() {
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column'}}>
-      <NavigationBar />
-      <Router>
+    <Router>
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <NavigationBar />
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/tool" element={<ToolPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/best-practices" element={<BestPracticePage />} />
         </Routes>
-      </Router>
-      <Footer />
-    </div>
-    
+        <Footer />
+      </div>
+    </Router>
   )
 }
 

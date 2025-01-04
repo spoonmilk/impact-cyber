@@ -4,6 +4,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    width: 100%;
 }
 
 .poster-text {
@@ -16,14 +17,13 @@
     line-height: 1.2; 
 }
 
-
 .vignette-wrapper {
     width: 100%;
-    height: 100vh; /* Full viewport height */
+    height: 100vh;
     display: flex;
-    justify-content: center; /* Horizontally center */
-    align-items: center; /* Vertically center */
-    padding: 20px;
-    box-sizing: border-box; /* Include padding in width/height calculation */
+    justify-content: center; 
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
