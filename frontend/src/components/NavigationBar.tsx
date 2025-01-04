@@ -19,6 +19,9 @@ export const NavigationBar = () => {
           <Button href="/" className="nav-item" sx={{ color: '#687d31', fontFamily: 'Ubuntu' }}>
             Home
           </Button>
+          <Button href="/tool" className="nav-item" sx={{ color: '#687d31', fontFamily: 'Ubuntu' }}>
+            TOOL
+          </Button>
           <Button href="/about" className="nav-item" sx={{ color: '#687d31', fontFamily: 'Ubuntu' }}>
             About
           </Button>

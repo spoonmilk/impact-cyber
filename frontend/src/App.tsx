@@ -1,8 +1,9 @@
 import './App.css'
-import HomePage from './pages/HomePage';
+import ToolPage from './pages/ToolPage';
 import AboutPage from './pages/AboutPage';
 import BestPracticePage from './pages/BestPracticePage';
 import NavigationBar from './components/NavigationBar';
+import LandingPage from './pages/LandingPage';
 import Footer from './components/Footer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -13,7 +14,8 @@ function App() {
       <NavigationBar />
       <Router>
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/tool" element={<ToolPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/best-practices" element={<BestPracticePage />} />
         </Routes>
