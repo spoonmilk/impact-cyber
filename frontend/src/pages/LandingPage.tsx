@@ -83,7 +83,7 @@ export const LandingPage = () => {
           images={[
             '../src/assets/hacker.png',
             null, // No image for row 2
-            '../src/assets/hacker.png',
+            '../src/assets/googleIcon.png',
           ]}
           dos={
             `Change passwords if you think your account has been breached.
