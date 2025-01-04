@@ -11,7 +11,7 @@ export const AboutPage = () => {
                 privacy and security. That’s why we created Soteria: to empower individuals with 
                 clear, actionable insights about data usage.</p>
             <img
-              src="../src/assets/aboutpic.jpg" /* Replace with your image URL */
+              src="../src/assets/cutepic.png" /* Replace with your image URL */
               alt="Our Story Image"
               className="story-image"
             />
