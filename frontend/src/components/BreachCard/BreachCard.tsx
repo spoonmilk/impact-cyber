@@ -7,6 +7,8 @@ interface BreachCardProps {
   breaches: { breach_dates: string; company_name: string; reported_date: string }[];
 }
 
+
+
 export default function BreachCard({ breaches }: BreachCardProps) {
   if (!breaches || breaches.length === 0) {
     return (
@@ -21,6 +23,16 @@ export default function BreachCard({ breaches }: BreachCardProps) {
     );
   }
 
+  const capitalizeName = (name: string) => {
+    const exceptions = { llc: "LLC", inc: "Inc.", corp: "Corp." };
+    return name
+      .split(" ")
+      .map((word) =>
+        exceptions[word.toLowerCase()] || word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+      )
+      .join(" ");
+  }
+
   const groupedBreaches: Record<string, string[]> = breaches.reduce((acc, breach) => {
     if (!acc[breach.reported_date]) {
       acc[breach.reported_date] = [];
@@ -31,7 +43,7 @@ export default function BreachCard({ breaches }: BreachCardProps) {
 
   return (
     <Card sx={{ maxWidth: 500, margin: 2 }}>
-      <CardHeader title={breaches[0].company_name || 'Company Name'} subheader="Breach data from public datasets" />
+      <CardHeader title={capitalizeName(breaches[0].company_name) || 'Company Name'} subheader="Breach data from public datasets" />
       <CardContent>
         {Object.entries(groupedBreaches).map(([reportedDate, breachDates], index) => (
           <div key={index} style={{ marginBottom: '20px' }}>
