@@ -1,0 +1,29 @@
+
+.page-heading {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.poster-text {
+    font-weight: 900 !important;
+    font-size: 5rem;
+    letter-spacing: 2px;
+    color: #19350c;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    margin-top: 20px;
+    line-height: 1.2; 
+}
+
+
+.vignette-wrapper {
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in width/height calculation */
+}
+
