@@ -21,19 +21,34 @@ export default function BreachCard({ breaches }: BreachCardProps) {
     );
   }
 
-  const allBreachDates = breaches.map((breach) => breach.breach_dates).join(', ');
-  const allReportedDates = breaches.map((breach) => breach.reported_date).join(', ');
+  const groupedBreaches: Record<string, string[]> = breaches.reduce((acc, breach) => {
+    if (!acc[breach.reported_date]) {
+      acc[breach.reported_date] = [];
+    }
+    acc[breach.reported_date].push(breach.breach_dates);
+    return acc;
+  }, {} as Record<string, string[]>);
 
   return (
     <Card sx={{ maxWidth: 500, margin: 2 }}>
       <CardHeader title={breaches[0].company_name || 'Company Name'} subheader="Breach data from public datasets" />
       <CardContent>
-        <Typography variant="body2" sx={{ color: 'text.secondary', marginBottom: 2 }}>
-          <strong>Breach Dates:</strong> {allBreachDates || 'Unknown'}
-        </Typography>
-        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-          <strong>Reported Dates:</strong> {allReportedDates || 'Unknown'}
-        </Typography>
+        {Object.entries(groupedBreaches).map(([reportedDate, breachDates], index) => (
+          <div key={index} style={{ marginBottom: '20px' }}>
+            <Typography variant="body1" sx={{ color: 'text.primary', fontWeight: 'bold' }}>
+              Breach reported on: {reportedDate || 'Unknown'}
+            </Typography>
+            <ul style={{ marginLeft: '20px', marginTop: '10px' }}>
+              {breachDates.map((date, idx) => (
+                <li key={idx}>
+                  <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                    Breach Date(s): {date || 'Unknown'}
+                  </Typography>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </CardContent>
     </Card>
   );

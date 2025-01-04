@@ -100,7 +100,7 @@ export const ToolPage: React.FC = () => {
           </div>
         )} */}
         {data && (<InfoCard data={data} iconUrl={iconUrl} />)}
-        <BreachCard breaches={breachData?.breaches || []} />
+        {breachData && <BreachCard breaches={breachData?.breaches || []} />}
       </div>
     </div>
   )
