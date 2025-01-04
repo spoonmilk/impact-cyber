@@ -91,7 +91,7 @@ export const BestPracticePage = () => {
     // Handle button click to change vignette content
     const handleButtonClick = (vignette: string) => {
       setSelectedVignette(vignette);
-      console.log(vignetteData.);
+      console.log(vignetteData);
       console.log(selectedVignette);
     };
 
