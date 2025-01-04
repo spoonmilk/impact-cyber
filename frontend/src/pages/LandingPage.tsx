@@ -2,14 +2,64 @@ import React from 'react'
 import '../css/LandingPage.css'
 import { Typography } from '@mui/material';
 import VignetteCard from '../components/VignetteCard';
-import { Button, Card, CardContent, CardMedia } from '@mui/material';
+import { Button, Card, CardContent, CardMedia, CardActions, Box } from '@mui/material';
 
+const card1 = (
+  <React.Fragment>
+    <CardContent style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <Typography variant="h5" component="div">
+        Want to learn more about how to keep yourself safe?
+      </Typography>
+      <Typography variant="body2">
+        We are here to help you! 
+        <br />
+      </Typography>
+      <img
+          src="../src/assets/hacker.png" 
+          alt="hacker"
+          style={{ width: '30%',  margin: '20px' }}
+        />
+    </CardContent>
+    <CardActions>
+      <Button size="small" href="/best-practices">Learn More</Button>
+    </CardActions>
+  </React.Fragment>
+);
+
+const card2 = (
+  <React.Fragment>
+    <CardContent  style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <Typography variant="h5" component="div">
+        Try out our tools!
+      </Typography>
+      <Typography variant="body2">
+        Find out if you wanna understand the risk of a platform before signing up for it.
+        <br />
+      </Typography>
+      <img
+          src="../src/assets/tool.png" 
+          alt="hacker"
+          style={{ width: '90%', height: '50%',  margin: '20px' }}
+        />
+    </CardContent>
+    <CardActions>
+      <Button size="small" href="/tool">Use the tool</Button>
+    </CardActions>
+  </React.Fragment>
+);
 
 export const LandingPage = () => {
   return (
     <div className="page-container card-background">
+      <div>
+          <Typography variant="h2" component="h2" sx={{ color: '#19350C', fontFamily: 'Ubuntu', fontWeight: 'bold', backgroundColor: '#D5D3CC', padding: '40px', borderRadius: '90px', marginTop: '40px', marginBottom: '40px' }}  gutterBottom>
+            Welcome to Soteria!
+          </Typography>
+        </div>
       <div className="row page-heading">
+        
         <div className="column">
+          
           <img
             src="../src/assets/GoogleBreach.png"
             alt="Placeholder"
@@ -54,7 +104,7 @@ export const LandingPage = () => {
 
 
       <div className="row page-heading">
-        <div className="column" style={{ width: '50%', height: '80px', padding: '10%' }}>
+        {/* <div className="column" style={{ width: '50%', height: '80px', padding: '10%' }}>
           <Button variant="contained" color="primary"
             href="/best-practices"
             sx={{
@@ -73,8 +123,14 @@ export const LandingPage = () => {
             }}>
             Click here to find out if you wanna understand the risk of a platform before signing up for it
           </Button>
-        </div>
+        </div> */}
+        <Box sx={{ display: 'flex', justifyContent: 'center', gap: '150px', flexWrap: 'wrap', padding: '20px' }}>
+          <Card variant="outlined" sx={{ width: 450 }}>{card1}</Card>
+          <Card variant="outlined" sx={{ width: 450 }}>{card2}</Card>
+        </Box>
+        
       </div>
+      
 
     </div>
   );

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, CardContent, CardMedia, Typography, Box } from '@mui/material';
+import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 
 interface VignetteCardProps {
     text: string;
@@ -14,7 +15,7 @@ const VignetteCard: React.FC<VignetteCardProps> = ({ text, images, dos, donts })
     const donts_rows = donts.split('\n');
     return (
         <Card sx={{
-            backgroundColor: '#19350c', width: '70%', margin: '20px', borderRadius: '10px',
+            backgroundColor: '#19350c', width: '45%', margin: '20px', borderRadius: '10px',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
@@ -34,7 +35,7 @@ const VignetteCard: React.FC<VignetteCardProps> = ({ text, images, dos, donts })
                     }}
                 >
                     {/* Optional Image Column */}
-                    {images[index] && (
+                    {images?.[index] && (
                         <CardMedia
                             component="img"
                             sx={{
@@ -104,16 +105,7 @@ const VignetteCard: React.FC<VignetteCardProps> = ({ text, images, dos, donts })
                     <Typography variant="h6" color="white">Dont's</Typography>
                     {donts_rows.map((line, index) => (
                         <Box key={index} sx={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-                            <CardMedia
-                                component="img"
-                                sx={{
-                                    height: 50,
-                                    width: 'auto',
-                                    maxWidth: '100px',
-                                }}
-                                image='../src/assets/cross.png'
-                                alt={`Row ${index + 1} image`}
-                            />
+                            <HighlightOffIcon sx={{ color: 'white', height: 50, width: 'auto', maxWidth: '100px' }} />
                             <CardContent sx={{ flex: 1 }}>
                                 <Typography variant="body1" color="white">
                                     {line.trim()}
