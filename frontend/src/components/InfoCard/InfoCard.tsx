@@ -24,7 +24,7 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
   transition: theme.transitions.create('transform', {
     duration: theme.transitions.duration.shortest,
   }),
-  }),
+}),
 );
 
 interface InfoCardProps {
