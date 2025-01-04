@@ -26,17 +26,17 @@ export const AboutPage = () => {
                 <p>Software Developer</p>
               </div>
               <div className="member">
-                <img src="../src/assets/profilepic.jpg" alt="Member 2" />
+                <img src="../src/assets/Alana.png" alt="Member 2" />
                 <h3>Alana Mackey</h3>
                 <p>Researcher</p>
               </div>
               <div className="member">
-                <img src="../src/assets/profilepic.jpg" alt="Member 3" />
+                <img src="../src/assets/Devi.png" alt="Member 3" />
                 <h3>Devi Sivakumar</h3>
                 <p>Software Engineer</p>
               </div>
               <div className="member">
-                <img src="../src/assets/profilepic.jpg" alt="Member 4" />
+                <img src="../src/assets/Mari.png" alt="Member 4" />
                 <h3>Mari Hirota</h3>
                 <p>Software Engineer</p>
               </div>

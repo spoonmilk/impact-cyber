@@ -1,7 +1,15 @@
 import SearchBar from "../components/SearchBar/SearchBar"
 import { useState } from "react"
+import InfoCard from "../components/InfoCard/InfoCard";
 
-export const HomePage: React.FC = () => {
+// Placeholder for actual code
+const handleSearch = (query: string) => {
+  console.log('Search query:', query);
+};
+
+
+
+export const ToolPage: React.FC = () => {
   const [data, setData] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
   const [iconUrl, setIconUrl] = useState<string>('');
@@ -13,7 +21,7 @@ export const HomePage: React.FC = () => {
       }
       const data = await response.json();
       setData(data);
-      console.log('Privacy Spy Data:', data);
+      console.log(data);
       setError(null);
 
       //getting icon from Google
@@ -45,6 +53,8 @@ export const HomePage: React.FC = () => {
     }
   }
 
+
+
   return (
     <div className="page-container">
       <div className="page-content">
@@ -57,6 +67,8 @@ export const HomePage: React.FC = () => {
             as well as the risks associated with providing such data </p>
         </div>
         
+        {/* <SearchBar onSearch={handleSearch} /> */}
+
         <SearchBar
           onSearch={(query: string) => {
             fetchPrivacySpyData(query); // Trigger fetch on search
@@ -64,23 +76,31 @@ export const HomePage: React.FC = () => {
           }}
         />
 
-        {data && (
-          <div>
-            {iconUrl ? (
-              <img src={iconUrl} alt={`${data.name} Icon`} style={{ width: '50px', height: '50px', borderRadius: '50%' }} />
-              ) : (
-              <p>No icon found</p>)}
+        {/* {data && (
+          <div className="company-info-section">
+            <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', marginBottom: '20px' }}>
+              <div>
+                {iconUrl ? (
+                  <img src={iconUrl} alt={`${data.name} Icon`} style={{ width: '50px', height: '50px', borderRadius: '50%' }} />
+                  ) : (
+                    <img src="../src/assets/noIcon.jpg" alt={`${data.name} Icon`} style={{ width: '50px', height: '50px', borderRadius: '50%' }} />)}
 
-            <h2>Company Name: {data.company_name}</h2>
+                <h2>{data.name}</h2>
+              </div>
+              <div className="score" >
+                <p>Score: {data.score}/10</p>
+              </div>
+            </div>
+            <p>{data.description}</p>
           </div>
-        )}
+        )} */}
 
-        
+        <InfoCard data={data} iconUrl={iconUrl} />
       </div>
     </div>
   )
 }
 
-export default HomePage
+export default ToolPage
 
 
