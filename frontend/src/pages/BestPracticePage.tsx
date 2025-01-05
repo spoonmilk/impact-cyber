@@ -13,10 +13,15 @@ export const BestPracticePage = () => {
       An unknown caller, claiming to be from a fraud investigation department, warns of unusual activity on her bank account. 
       Urged to act quickly, Bala shares sensitive information like her account number and part of her Social Security number. 
       Later, she discovers large unauthorized transactions. 
-      Realizing it was a vishing scam, she contacts her bank in panic and spends days disputing charges and reporting the fraud.`,
+      Realizing it was a phone call scam otherwise known as "vishing", she contacts her bank in panic and spends days disputing charges and reporting the fraud.`,
       image: ['../src/assets/hacker.png', null, '../src/assets/hacker.png'],
-      dos: 'something',
-      donts: 'something',
+      dos: 
+        `Verify caller identity. If you are unsure if a call is legitimate hang up and call the institution directly. 
+        Beware of urgency tactics. Scammers often attempt to create a sense of urgency in order to exploit emotion, but legitimate institutions will always give you time for verification. 
+        Limit who has your phone number by removing your contact information from services you no longer use. You can do this by signing up for the national do not call registry will`,
+      donts: 
+        `Do not answer calls from unknown numbers, allow them to go to voicemail.
+        Do not provide personal information over the phone, especially if you did not initiate the call. Legitimate institutions will never ask for sensitive details this way.`,
     },
     socialengineering: {
       text: `
@@ -25,8 +30,10 @@ export const BestPracticePage = () => {
       Something feels off, so you hang up and call the dealership directly. It turns out, it was a scam. 
       `,
       image: ['../src/assets/hacker.png', null, '../src/assets/hacker.png'],
-      dos: 'something',
-      donts: 'something',
+      dos: `Slow down. When facing any requests for personal information, slow down, know there is no sense of urgency and critically evaluate the request.
+            Monitor accounts. If you accidentally shared any information, monitor your bank and credit accounts for unusual activity. Consider placing a fraud alert or freeze on your credit file.`,
+      donts: `Do not provide sensitive information over the phone, especially if you did not initiate the call. Legitimate institutions will never ask for sensitive details this way.
+              Don’t Hesitate to Hang Up. If something feels off, trust your instincts. You can always verify the situation later by contacting the organization directly.`,
     },
     phishing: {
       text: `
@@ -35,8 +42,10 @@ export const BestPracticePage = () => {
       You’ve nearly fallen for a phishing scam. 
       `,
       image: ['../src/assets/emailPhishing.png', null, '../src/assets/hacker.png'],
-      dos: 'something',
-      donts: 'something',
+      dos: `Educate Yourself About Phishing Tactics. Read stories like the ones above to familiarize yourself with up to date phishing tactics.
+            Verify Email Sources. Carefully check the sender's email address. To do this, hover over links before clicking them to check if the URL matches the official website.`,
+      donts: `Click on links from unverified sources. Avoid clicking on links or downloading attachments from unknown or unexpected sources, especially if the email seems urgent or too good to be true.
+              Neglect software updates. Don’t delay updates or patches. These updates often fix security holes that individuals can exploit.`,
     },
     socialmedia: {
       text: `
