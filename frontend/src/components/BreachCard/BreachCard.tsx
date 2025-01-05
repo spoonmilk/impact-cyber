@@ -42,7 +42,7 @@ export default function BreachCard({ breaches }: BreachCardProps) {
   }, {} as Record<string, string[]>);
 
   return (
-    <Card sx={{ maxWidth: 500, margin: 2 }}>
+    <Card sx={{ width: 600, margin: 2 }}>
       <CardHeader title={capitalizeName(breaches[0].company_name) || 'Company Name'} subheader="Breach data from public datasets" />
       <CardContent>
         {Object.entries(groupedBreaches).map(([reportedDate, breachDates], index) => (

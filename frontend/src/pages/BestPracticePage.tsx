@@ -34,7 +34,7 @@ export const BestPracticePage = () => {
       You click the link, landing on what looks like your bank’s login page. Panic fuels your haste as you prepare to type your credentials. But then, something feels off. The URL isn’t quite right—subtly different from the official site. Realization hits you like a jolt. 
       You’ve nearly fallen for a phishing scam. 
       `,
-      image: ['../src/assets/hacker.png', null, '../src/assets/hacker.png'],
+      image: ['../src/assets/emailPhishing.png', null, '../src/assets/hacker.png'],
       dos: 'something',
       donts: 'something',
     },
@@ -45,9 +45,12 @@ export const BestPracticePage = () => {
       Suddenly, your feed is flooded with European travel reels—picturesque cafes, Christmas markets, and views of Santorini. Puzzled, you notice ads for travel agencies and winter coats. 
       A thought creeps in: Was my phone listening to us?
       `,
-      image: ['../src/assets/hacker.png', null, '../src/assets/hacker.png'],
-      dos: 'something',
-      donts: 'something',
+      image: ['../src/assets/talking.png', null, '../src/assets/media.png'],
+      dos: `Set your profile to private
+      Accept Friend/Follow Requests only from people you know
+      Misinformation, scams, and fake news are rampant on social media. Be skeptical of anything that seems too good to be true. 
+      Always update your social media apps and devices so that you’re up-to-date with the latest security updates.`,
+      donts: `Avoid posting too much about your personal life, such as travel plans, family matters, or financial details. Scammers can use this information to target you.`,
     },
     wifi: {
       text: `At a coffee shop, you connect to free public Wi-Fi to check your bank account. 
