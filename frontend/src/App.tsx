@@ -6,6 +6,7 @@ import NavigationBar from './components/NavigationBar';
 import LandingPage from './pages/LandingPage';
 import Footer from './components/Footer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import TrustedResourcesPage from './pages/ResourcePage';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/tool" element={<ToolPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/best-practices" element={<BestPracticePage />} />
+          <Route path="/resources" element={<TrustedResourcesPage />} />
         </Routes>
         <Footer />
       </div>
