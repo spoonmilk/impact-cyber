@@ -54,9 +54,12 @@ export const BestPracticePage = () => {
       Everything seems normal as you log in, but you don’t realize someone nearby is intercepting your connection through a fake Wi-Fi hotspot.
       Later, you get a notification about suspicious transactions. It dawns on you—the public Wi-Fi wasn’t safe, and your login details were stolen.
       `,
-      image: ['../src/assets/hacker.png', null, '../src/assets/hacker.png'],
-      dos: 'something',
-      donts: 'something',
+      image: ['../src/assets/wifi.png', null, '../src/assets/phoneAlert.png'],
+      dos: `Turn off autconnect to public wifi in your phone settings.
+      Use a VPN (Virtual Private Network) to keep your information hidden and safe. Check out - Proton VPN.`,
+      donts: `Do not to check your bank information or any other sensitive information when on public Wi-Fi. Wait until you're on a secure network.
+      Do not connect to Wi-Fi networks you don't recognize.
+      Do not share your files or printer on public WiFi`,
     },
   };
 
