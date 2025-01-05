@@ -14,7 +14,7 @@ export const BestPracticePage = () => {
       Urged to act quickly, Bala shares sensitive information like her account number and part of her Social Security number. 
       Later, she discovers large unauthorized transactions. 
       Realizing it was a phone call scam otherwise known as "vishing", she contacts her bank in panic and spends days disputing charges and reporting the fraud.`,
-      image: ['../src/assets/hacker.png', null, '../src/assets/hacker.png'],
+      image: ['../src/assets/telephone.png', null, '../src/assets/vishingHook.png'],
       dos: 
         `Verify caller identity. If you are unsure if a call is legitimate hang up and call the institution directly. 
         Beware of urgency tactics. Scammers often attempt to create a sense of urgency in order to exploit emotion, but legitimate institutions will always give you time for verification. 
