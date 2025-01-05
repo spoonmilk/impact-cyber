@@ -61,6 +61,9 @@ export default function BreachCard({ breaches }: BreachCardProps) {
             </ul>
           </div>
         ))}
+        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+          Our datasets do not contain ALL data breaches in recent times. We recommend you use this as a resource to start your research!
+        </Typography>
       </CardContent>
     </Card>
   );
