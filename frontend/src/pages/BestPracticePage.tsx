@@ -41,7 +41,7 @@ export const BestPracticePage = () => {
       You click the link, landing on what looks like your bank’s login page. Panic fuels your haste as you prepare to type your credentials. But then, something feels off. The URL isn’t quite right—subtly different from the official site. Realization hits you like a jolt. 
       You’ve nearly fallen for a phishing scam. 
       `,
-      image: ['../src/assets/emailPhishing.png', null, '../src/assets/hacker.png'],
+      image: ['../src/assets/emailPhishing.png', null, '../src/assets/unlock.png'],
       dos: `Educate Yourself About Phishing Tactics. Read stories like the ones above to familiarize yourself with up to date phishing tactics.
             Verify Email Sources. Carefully check the sender's email address. To do this, hover over links before clicking them to check if the URL matches the official website.`,
       donts: `Click on links from unverified sources. Avoid clicking on links or downloading attachments from unknown or unexpected sources, especially if the email seems urgent or too good to be true.
