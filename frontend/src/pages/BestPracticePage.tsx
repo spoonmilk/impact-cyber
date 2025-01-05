@@ -14,7 +14,7 @@ export const BestPracticePage = () => {
       Urged to act quickly, Bala shares sensitive information like her account number and part of her Social Security number. 
       Later, she discovers large unauthorized transactions. 
       Realizing it was a phone call scam otherwise known as "vishing", she contacts her bank in panic and spends days disputing charges and reporting the fraud.`,
-      image: ['../src/assets/hacker.png', null, '../src/assets/hacker.png'],
+      image: ['../src/assets/telephone.png', null, '../src/assets/vishingHook.png'],
       dos: 
         `Verify caller identity. If you are unsure if a call is legitimate hang up and call the institution directly. 
         Beware of urgency tactics. Scammers often attempt to create a sense of urgency in order to exploit emotion, but legitimate institutions will always give you time for verification. 
@@ -29,7 +29,7 @@ export const BestPracticePage = () => {
       They ask for your address, driver’s license number, and the last four digits of your Social Security number. 
       Something feels off, so you hang up and call the dealership directly. It turns out, it was a scam. 
       `,
-      image: ['../src/assets/hacker.png', null, '../src/assets/hacker.png'],
+      image: ['../src/assets/socialEngineering.png', null, '../src/assets/scam.png'],
       dos: `Slow down. When facing any requests for personal information, slow down, know there is no sense of urgency and critically evaluate the request.
             Monitor accounts. If you accidentally shared any information, monitor your bank and credit accounts for unusual activity. Consider placing a fraud alert or freeze on your credit file.`,
       donts: `Do not provide sensitive information over the phone, especially if you did not initiate the call. Legitimate institutions will never ask for sensitive details this way.
